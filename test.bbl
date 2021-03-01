@@ -1,4 +1,9 @@
 
-a is 1 minus 1
-b is 2 times a
-print a plus b
+
+function add a b
+    return a plus b
+
+c is 1
+d is 1
+
+print add c d
