@@ -1,0 +1,4 @@
+
+a is 1 minus 1
+b is 2 times a
+print a plus b
