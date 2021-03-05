@@ -1,9 +1,1 @@
 
-
-function add a b
-    return a plus b
-
-c is 1
-d is 1
-
-print add c d
