@@ -20,7 +20,7 @@ class Reader:
                 in_string = False
                 
                 if line.strip() != '':
-                    for (i, char) in enumerate(line):
+                    for (i, char) in enumerate(line.rstrip()):
                         
                         # print(f'"{token}" "{i}" "{char}" "{len(self.statement)}" "{in_string}"')
 

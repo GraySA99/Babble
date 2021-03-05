@@ -14,14 +14,16 @@ class Program:
             Token.ReservedWords.MINUS,
             Token.ReservedWords.TIMES,
             Token.ReservedWords.DIVIDE,
-            Token.ReservedWords.FUNCTION
+            Token.ReservedWords.FUNCTION,
+            Token.ReservedWords.IS
         ]
         self.reader = Reader(self, filename)
         self.executor = Executor(self)
     
     def run(self):
         self.reader.read()
-        self.executor.execute(self.reader.statement);
+        while len(self.reader.statement) > 0:
+            self.executor.execute(self.reader.statement);
 
     def set_variable(self, label, value=None):
         

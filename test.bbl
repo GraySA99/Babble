@@ -1,1 +1,5 @@
 
+a is 10
+b is 20
+
+print a plus b times 4
