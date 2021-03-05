@@ -27,6 +27,8 @@ class Executor:
         elif token.token == Token.BOOL:
             if len(reader.statement)==0:
                 return 'true' if token.value else 'false'
+            else:
+                return 'true' if token.value else 'false'
         elif token.token == Token.NUMBER:
             if len(reader.statement)==0:
                 return int(token.value)
@@ -43,11 +45,14 @@ class Executor:
                 reader.statement = reader.statement[1:]
                 return int(token.value) / self.execute(reader)
             elif reader.statement[0].token == Token.ReservedWords.EQUALS:
-                reader.statement = [Token(Token.BOOL, int(token.value) == self.execute(reader))] + reader.statement[1:]
+                reader.statement = reader.statement[1:]
+                nextVal = self.execute(reader)
+                reader.statement = [Token(Token.BOOL, int(token.value) == nextVal)] + reader.statement
                 return self.execute(reader)
             elif reader.statement[0].token == Token.ReservedWords.GREATER:
-                print(reader.statement)
-                reader.statement = [Token(Token.BOOL, int(token.value) > self.execute(reader))] + reader.statement[1:]
+                reader.statement = reader.statement[1:]
+                nextVal = self.execute(reader)
+                reader.statement = [Token(Token.BOOL, int(token.value) > nextVal)] + reader.statement
                 return self.execute(reader)
             elif reader.statement[0].token == Token.ReservedWords.LESS:
                 reader.statement = [Token(Token.BOOL, int(token.value) < self.execute(reader))] + reader.statement[1:]

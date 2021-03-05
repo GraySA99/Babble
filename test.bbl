@@ -1,6 +1,10 @@
 
 a is 20
-b is 20
+b is 30
 
-if b greater a 
-    print "b greater"
+if b equals a
+    print "b equals a"
+if a greater b
+    print "a greater than b"
+if a less b
+    print "a less than b"
