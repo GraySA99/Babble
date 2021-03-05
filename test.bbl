@@ -1,5 +1,6 @@
 
-a is 10
+a is 20
 b is 20
 
-print a plus b times 4
+if b greater a 
+    print "b greater"

@@ -9,10 +9,17 @@ class Token:
         DIVIDE = 'divide'
         FUNCTION = 'function'
         IS = 'is'
+        IF = 'if'
+        EQUALS = 'equals'
+        GREATER = 'greater'
+        LESS = 'less'
 
     STRING = 'string'
     NUMBER = 'number'
     VAR = 'var'
+    BOOL = 'bool'
+    INDENT = 't'
+    UNINDENT = '/t'
 
     def __init__(self, token, value=None):
         self.token = token

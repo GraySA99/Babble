@@ -15,15 +15,21 @@ class Program:
             Token.ReservedWords.TIMES,
             Token.ReservedWords.DIVIDE,
             Token.ReservedWords.FUNCTION,
-            Token.ReservedWords.IS
+            Token.ReservedWords.IS,
+            Token.ReservedWords.IF,
+            Token.ReservedWords.EQUALS,
+            Token.ReservedWords.GREATER,
+            Token.ReservedWords.LESS
         ]
         self.reader = Reader(self, filename)
         self.executor = Executor(self)
+
+        self.skip_line = False
     
     def run(self):
         self.reader.read()
         while len(self.reader.statement) > 0:
-            self.executor.execute(self.reader.statement);
+            self.executor.execute(self.reader)
 
     def set_variable(self, label, value=None):
         
